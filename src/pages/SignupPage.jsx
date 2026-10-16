@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router";
 import { renderField } from "../common/formField";
@@ -33,7 +33,7 @@ const signupSteps = [
     title: "Profile picture",
     heading: "Complete your profile",
     description: "Add a photo to personalize your account.",
-    fields: ["photoUrl"],
+    fields: ["location", "photoUrl"],
   },
 ];
 
@@ -48,6 +48,8 @@ const signupFields = [
     required: true,
     step: 1,
     halfWidth: true,
+    maxLength: 50,
+    minLength: 4
   },
   {
     name: "lastName",
@@ -58,6 +60,7 @@ const signupFields = [
     required: false,
     step: 1,
     halfWidth: true,
+    maxLength: 50,
   },
   {
     name: "emailId",
@@ -99,7 +102,7 @@ const signupFields = [
       { label: "Female", value: "female" },
       { label: "Other", value: "other" },
     ],
-    required: false,
+    required: true,
     step: 2,
     halfWidth: true,
   },
@@ -112,6 +115,15 @@ const signupFields = [
     required: false,
     step: 2,
     helperText: "A short introduction helps other developers get to know you.",
+  },
+  {
+    name: "location",
+    label: "Location",
+    type: "location",
+    placeholder: "Search your city...",
+    required: false,
+    step: 2,
+    helperText: "Select your city and state.",
   },
   {
     name: "skills",
@@ -225,6 +237,7 @@ const SignupPage = () => {
   };
 
   const handlePrevious = () => {
+
     if (!isFirstStep) {
       setCurrentStep((step) => step - 1);
     }
@@ -340,12 +353,14 @@ const SignupPage = () => {
               className="space-y-4"
             >
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {visibleFields.map((field) =>
-                  renderField(field, {
-                    register,
-                    errors,
-                  })
-                )}
+                {visibleFields.map((field) => (
+                  <div key={field.name} className="contents">
+                    {renderField(field, {
+                      register,
+                      errors,
+                    })}
+                  </div>
+                ))}
               </div>
 
               <div className="flex gap-3 pt-2">

@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
-import { useLogin } from "../hooks/useLogin";
+import { useLogin } from "../hooks/useAuth";
+
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,7 +12,7 @@ const LoginPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, },
   } = useForm({
     mode: "onTouched",
     defaultValues: {
@@ -21,7 +22,6 @@ const LoginPage = () => {
   });
 
   const onSubmit = async (data) => {
-    console.log("Login data:", data);
     mutate(data);
 
     // Connect your backend login API here.

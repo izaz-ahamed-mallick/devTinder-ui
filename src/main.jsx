@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <App />
         <Toaster
-          position="top-right"
+          position="bottom-right"
           richColors
           theme="dark"
           closeButton

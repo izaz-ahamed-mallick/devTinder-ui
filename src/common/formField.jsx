@@ -11,30 +11,47 @@ export const renderField = (field, { register, errors = {} } = {}) => {
     required: field.required
       ? `${field.label} is required.`
       : false,
+
     ...(field.minLength != null && {
       minLength: {
         value: field.minLength,
         message: `Minimum ${field.minLength} characters required.`,
       },
     }),
+
     ...(field.maxLength != null && {
       maxLength: {
         value: field.maxLength,
         message: `Maximum ${field.maxLength} characters allowed.`,
       },
     }),
+
+    ...(field.type === "password" && {
+      validate: (value) => {
+        const isStrongPassword =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+
+        return (
+          isStrongPassword.test(value) ||
+          "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character."
+        );
+      },
+    }),
+
     ...(field.type === "email" && {
       pattern: {
         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         message: "Please enter a valid email address.",
       },
     }),
+
     ...(field.type === "number" && field.min != null && {
       min: {
         value: field.min,
         message: `Minimum age is ${field.min}.`,
       },
     }),
+
     ...(field.type === "number" && field.max != null && {
       max: {
         value: field.max,

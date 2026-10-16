@@ -8,6 +8,7 @@ import LandingPage from "../pages/LandingPage";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import ProfilePage from "../pages/ProfilePage";
+import SettingPage from "../pages/SettingPage";
 
 const FeedPage = () => <div>Developer feed coming soon</div>;
 
@@ -17,13 +18,15 @@ const AppRoutes = () => {
       <Route element={<PublicRoute />}>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+    
       </Route>
-
+    <Route path="/signup" element={<SignupPage />} />
       <Route element={<PrivateRoute />}>
         <Route path="/feed" element={<FeedPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/settings" element={<SettingPage />} />
       </Route>
+       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };

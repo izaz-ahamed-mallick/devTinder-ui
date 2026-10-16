@@ -13,7 +13,7 @@ export const useSignUp = () => {
 
       toast.success(data.message || "Logout successful!");
 
-      // navigate("/login", { replace: true });
+       navigate("/login", { replace: true });
     },
     onError: (error) => {
       toast.error(

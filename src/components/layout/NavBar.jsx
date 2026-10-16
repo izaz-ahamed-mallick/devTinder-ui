@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
-import { useLogOut } from "../../hooks/useLogin";
+import { useLogOut } from "../../hooks/useAuth";
 
 const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);

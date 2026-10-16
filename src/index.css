@@ -41,3 +41,13 @@
     transform: translateX(350%);
   }
 }
+
+@layer base {
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
