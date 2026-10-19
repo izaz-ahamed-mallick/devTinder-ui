@@ -9,8 +9,11 @@ import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import ProfilePage from "../pages/ProfilePage";
 import SettingPage from "../pages/SettingPage";
+import AuthenticatedLayout from "../components/layout/AuthenticatedLayout";
+import RequestsPage from "../pages/RequestsPage";
+import ConnectionsPage from "../pages/ConnectionsPage";
+import FeedPage from "../pages/FeedPage";
 
-const FeedPage = () => <div>Developer feed coming soon</div>;
 
 const AppRoutes = () => {
   return (
@@ -18,15 +21,22 @@ const AppRoutes = () => {
       <Route element={<PublicRoute />}>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-    
+        <Route path="/signup" element={<SignupPage />} />
       </Route>
-    <Route path="/signup" element={<SignupPage />} />
+
       <Route element={<PrivateRoute />}>
-        <Route path="/feed" element={<FeedPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/settings" element={<SettingPage />} />
+        <Route element={<AuthenticatedLayout />}>
+          <Route path="/feed" element={<FeedPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/settings" element={<SettingPage />} />
+
+          {/* Add these routes when the pages are ready */}
+          <Route path="/connections" element={<ConnectionsPage />} />
+          <Route path="/requests" element={<RequestsPage />} />
+          {/* <Route path="/messages" element={<MessagesPage />} /> */}
+        </Route>
       </Route>
-       <Route path="*" element={<NotFoundPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };

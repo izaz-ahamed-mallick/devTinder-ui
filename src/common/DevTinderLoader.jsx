@@ -2,19 +2,18 @@
 import { Code2, Terminal, Users } from "lucide-react";
 
 const DevTinderLoader = ({
-  label = "Verifying your session...",
+  label = "Loading your data...",
   fullScreen = true,
 }) => {
   return (
- <main
-  role="status"
-  aria-live="polite"
-  className={`flex w-full items-center justify-center overflow-hidden px-4 ${
-    fullScreen
-      ? "h-[100dvh] bg-[#0B0D10]"
-      : "min-h-[260px] bg-transparent"
-  }`}
-><div className="flex w-full max-w-md flex-col items-center text-center">
+    <main
+      role="status"
+      aria-live="polite"
+      className={`flex w-full items-center justify-center overflow-hidden px-4 ${fullScreen
+          ? "h-[100dvh] bg-[#0B0D10]"
+          : "min-h-[260px] bg-transparent"
+        }`}
+    ><div className="flex w-full max-w-md flex-col items-center text-center">
         {/* Custom loader emblem — inspired by your developer logo */}
         <div className="relative mb-8 flex h-40 w-40 items-center justify-center">
           <div className="absolute inset-0 rounded-full border border-[#26364D] animate-[spin_12s_linear_infinite]" />
