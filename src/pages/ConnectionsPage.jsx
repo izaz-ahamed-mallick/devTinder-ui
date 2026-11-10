@@ -8,7 +8,7 @@ import {
 
 } from "lucide-react";
 
-import DevTinderLoader from "../common/DevTinderLoader";
+import DevCircleLoader from "../common/DevCircleLoader";
 import { useAcceptedConnections } from "../hooks/useRequest";
 
 const ConnectionsPage = () => {
@@ -30,7 +30,7 @@ console.log(connections)
   });
 
   if (isLoading) {
-    return <DevTinderLoader />;
+    return <DevCircleLoader />;
   }
 
   if (isError) {

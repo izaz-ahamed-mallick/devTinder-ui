@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router";
 import { loginUser, logOutUser } from "../api/authApi";
 import { toast } from "sonner";
-import { updatePassword } from "../api/userApi";
+import { forgotPassword, resendVerificationEmail, resetPassword, updatePassword, verifyEmail, verifyResetOtp } from "../api/userApi";
 
 
 
@@ -68,3 +68,34 @@ export const useUpdatePassword = () => {
     },
   })
 }
+
+
+export const useVerifyEmail = () => {
+  return useMutation({
+    mutationFn: verifyEmail,
+  });
+};
+
+
+export const useResendVerificationEmail = () => {
+  return useMutation({
+    mutationFn: resendVerificationEmail,
+  });
+};
+
+
+
+export const useForgotPassword = () =>
+  useMutation({
+    mutationFn: forgotPassword,
+  });
+
+export const useVerifyResetOtp = () =>
+  useMutation({
+    mutationFn: verifyResetOtp,
+  });
+
+export const useResetPassword = () =>
+  useMutation({
+    mutationFn: resetPassword,
+  });

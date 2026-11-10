@@ -18,7 +18,7 @@ import {
 import { FaLinkedin } from "react-icons/fa";
 import { usePendingRequest, useUpdateRequest } from "../hooks/useRequest";
 import { formatRelativeTime } from "../utils/formatRelativeTime";
-import DevTinderLoader from "../common/DevTinderLoader";
+import DevCircleLoader from "../common/DevCircleLoader";
 
 const ReceivedRequests = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -100,7 +100,7 @@ const ReceivedRequests = () => {
   return (
     <div className="min-w-0 text-[#F0F2F5]">
       {isLoading && (
-        <DevTinderLoader label="  Loading connection requests..." />
+        <DevCircleLoader label="  Loading connection requests..." />
       )}
       {isError && (
         <div className="rounded-2xl border border-[#44343A] bg-[#1B1419] px-6 py-8 text-center text-sm text-[#E4AAB3]">
@@ -433,7 +433,7 @@ const ReceivedRequests = () => {
                 BUILT FOR DEVELOPER CONNECTIONS
               </span>
               <span className="font-mono text-[10px] text-[#586474]">
-                DEVTINDER / NETWORK
+                DevCircle / NETWORK
               </span>
             </div>
           </div>

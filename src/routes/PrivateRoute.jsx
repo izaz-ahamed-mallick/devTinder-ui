@@ -2,7 +2,7 @@
 import { Navigate, Outlet } from "react-router";
 import { ShieldCheck, LoaderCircle, RefreshCw } from "lucide-react";
 import { useCurrentUser } from "../hooks/useCurrentUser";
-import DevTinderLoader from "../common/DevTinderLoader";
+import DevCircleLoader from "../common/DevCircleLoader";
 
 const PrivateRoute = () => {
   const {
@@ -17,7 +17,7 @@ const PrivateRoute = () => {
   // Wait until the backend verifies the session.
  if (isPending) {
   return (
-    <DevTinderLoader
+    <DevCircleLoader
       fullScreen
       label="Verifying your session..."
     />

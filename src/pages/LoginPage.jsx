@@ -1,17 +1,29 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff, ArrowRight } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useLogin } from "../hooks/useAuth";
+import LoginFeedback from "./LoginFeedback";
 
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { mutate, isPending, isError, error } = useLogin()
+  const navigate = useNavigate()
+
+
+  const isEmailNotVerified =
+    isError &&
+    error?.response?.status === 403 &&
+    error?.response?.data?.message
+      ?.toLowerCase()
+      .includes("verify your email");
+
 
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors, },
   } = useForm({
     mode: "onTouched",
@@ -24,8 +36,8 @@ const LoginPage = () => {
   const onSubmit = async (data) => {
     mutate(data);
 
-    // Connect your backend login API here.
   };
+
 
   return (
     <main className="flex min-h-[calc(100vh-64px)] items-center justify-center px-4 py-10 sm:px-6">
@@ -37,7 +49,7 @@ const LoginPage = () => {
           <div className="relative">
             <img
               src="/logo.png"
-              alt="DevTinder"
+              alt="DevCircle"
               className="h-10 w-auto max-w-full object-contain sm:h-12"
             />
           </div>
@@ -73,7 +85,7 @@ const LoginPage = () => {
             <div className="mb-8 lg:hidden">
               <img
                 src="/logo.png"
-                alt="DevTinder"
+                alt="DevCircle"
                 className="h-10 w-auto max-w-full object-contain object-left"
               />
             </div>
@@ -141,12 +153,9 @@ const LoginPage = () => {
                   >
                     Password
                   </label>
-
                   <button
                     type="button"
-                    onClick={() => {
-                      // Add your forgot-password flow here.
-                    }}
+                    onClick={() => navigate("/forgot-password")}
                     className="cursor-pointer text-xs text-[#A7B7CD] transition hover:text-[#C5D0DF]"
                   >
                     Forgot password?
@@ -205,9 +214,16 @@ const LoginPage = () => {
                 <ArrowRight size={18} />
               </button>
             </form>
+            <LoginFeedback
+              key={getValues("emailId")}
+              isEmailNotVerified={isEmailNotVerified}
+              isError={isError}
+              error={error}
+              emailId={getValues("emailId")}
+            />
 
             <p className="mt-7 text-center text-sm text-[#8B929E]">
-              New to DevTinder?{" "}
+              New to DevCircle?{" "}
               <Link
                 to="/signup"
                 className="font-medium text-[#A7B7CD] transition hover:text-[#C5D0DF]"
@@ -223,6 +239,7 @@ const LoginPage = () => {
           </div>
         </section>
       </div>
+
     </main>
   );
 };

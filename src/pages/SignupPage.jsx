@@ -264,7 +264,7 @@ const SignupPage = () => {
 
           <img
             src="/logo.png"
-            alt="DevTinder"
+            alt="DevCircle"
             className="relative h-12 w-fit max-w-full object-contain object-left"
           />
 
@@ -300,7 +300,7 @@ const SignupPage = () => {
             <div className="mb-7 lg:hidden">
               <img
                 src="/logo.png"
-                alt="DevTinder"
+                alt="DevCircle"
                 className="h-10 w-auto max-w-full object-contain object-left"
               />
             </div>

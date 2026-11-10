@@ -47,12 +47,12 @@ const Navbar = () => {
         {/* Brand */}
         <Link
           to="/"
-          aria-label="DevTinder home"
+          aria-label="DevCircle home"
           className="flex min-w-0 shrink items-center"
         >
           <img
             src="/logo.png"
-            alt="DevTinder"
+            alt="DevCircle"
             className="block h-auto max-h-10 w-auto max-w-full object-contain sm:max-h-12"
           />
         </Link>

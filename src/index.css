@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: devtinder --default;
+  themes: DevCircle --default;
 }
 
 @plugin "daisyui/theme" {
-  name: "devtinder";
+  name: "DevCircle";
   default: true;
   color-scheme: dark;
 

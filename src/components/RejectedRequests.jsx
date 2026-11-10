@@ -1,5 +1,5 @@
 import { Inbox, ArrowUpRight, UserRound } from "lucide-react";
-import DevTinderLoader from "../common/DevTinderLoader";
+import DevCircleLoader from "../common/DevCircleLoader";
 import { useRejectedRequest } from "../hooks/useRequest";
 
 const RejectedRequests = () => {
@@ -14,7 +14,7 @@ const RejectedRequests = () => {
         : [];
 
   if (isLoading) {
-    return <DevTinderLoader />;
+    return <DevCircleLoader />;
   }
 
   if (isError) {

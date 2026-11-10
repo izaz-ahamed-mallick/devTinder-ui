@@ -110,7 +110,7 @@ const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
               YOUR SPACE
             </p>
             <h2 className="mt-2 whitespace-nowrap text-lg font-semibold text-[#F0F2F5]">
-              Explore DevTinder
+              Explore DevCircle
             </h2>
           </div>
 

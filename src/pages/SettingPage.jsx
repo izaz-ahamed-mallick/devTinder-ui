@@ -126,7 +126,7 @@ const SettingPage = () => {
         <header className="mb-8">
           <div className="mb-5 flex items-center gap-2 text-xs font-medium tracking-[0.18em] text-[#7F8A9A]">
             <span className="size-2 rounded-full bg-[#A7B7CD]" />
-            YOUR DEVTINDER SPACE
+            YOUR DevCircle SPACE
           </div>
 
           <div className="flex items-start gap-4">

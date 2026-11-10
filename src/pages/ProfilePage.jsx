@@ -23,7 +23,7 @@ import {
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { toast } from "sonner";
 import { useCurrentUser, useUpdateProfile } from "../hooks/useCurrentUser";
-import DevTinderLoader from "../common/DevTinderLoader";
+import DevCircleLoader from "../common/DevCircleLoader";
 import CommonError from "../common/CommonError";
 import LocationInput from "../common/LocationInput";
 import { getChangedFields } from "../utils/getChangedFields";
@@ -94,7 +94,7 @@ const ProfilePage = () => {
   }, [user, reset]);
 
   if (isPending) {
-    return <DevTinderLoader label="Loading your profile..." />;
+    return <DevCircleLoader label="Loading your profile..." />;
   }
 
   if (isError || !user) {
@@ -266,7 +266,7 @@ const ProfilePage = () => {
           <div>
             <div className="mb-2 flex items-center gap-2 text-xs font-medium text-[#8B929E]">
               <Users size={15} />
-              YOUR DEVTINDER SPACE
+              YOUR DevCircle SPACE
             </div>
 
             <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -363,7 +363,7 @@ const ProfilePage = () => {
 
                         <span className="inline-flex items-center gap-1.5 rounded-lg border border-[#303B49] bg-[#171E27] px-2.5 py-1.5 text-xs text-[#C4D0DF]">
                           <ShieldCheck size={13} />
-                          DevTinder member
+                          DevCircle member
                         </span>
                       </div>
                     </>

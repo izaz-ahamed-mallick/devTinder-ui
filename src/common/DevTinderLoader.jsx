@@ -1,7 +1,7 @@
 
 import { Code2, Terminal, Users } from "lucide-react";
 
-const DevTinderLoader = ({
+const DevCircleLoader = ({
   label = "Loading your data...",
   fullScreen = true,
 }) => {
@@ -134,4 +134,4 @@ const DevTinderLoader = ({
   );
 };
 
-export default DevTinderLoader;
+export default DevCircleLoader;

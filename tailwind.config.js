@@ -26,7 +26,7 @@ export default {
 daisyui: {
   themes: [
     {
-      devtinder: {
+      DevCircle: {
         "color-scheme": "dark",
         "primary": "#A78BFA",
         "primary-content": "#100B20",

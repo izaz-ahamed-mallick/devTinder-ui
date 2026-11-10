@@ -220,7 +220,7 @@ const LandingPage = () => {
 
                   <Link
                     to="/signup"
-                    aria-label="Join DevTinder to connect"
+                    aria-label="Join DevCircle to connect"
                     className="flex h-11 w-12 cursor-pointer items-center justify-center rounded-xl bg-[#A7B7CD] text-[#0B0D10] transition hover:bg-[#C5D0DF]"
                   >
                     <Heart size={19} />
@@ -251,7 +251,7 @@ const LandingPage = () => {
 
               <p className="mt-4 flex items-center justify-center gap-2 text-xs text-[#737D8A]">
                 <Terminal size={14} />
-                Preview of the DevTinder experience
+                Preview of the DevCircle experience
               </p>
             </div>
           </div>
@@ -266,7 +266,7 @@ const LandingPage = () => {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold tracking-[0.2em] text-[#A7B7CD] uppercase">
-              Why DevTinder?
+              Why DevCircle?
             </p>
 
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -327,7 +327,7 @@ const LandingPage = () => {
               to="/signup"
               className="mt-8 inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#A7B7CD] px-6 py-3.5 font-semibold text-[#0B0D10] transition hover:bg-[#C5D0DF]"
             >
-              Join DevTinder
+              Join DevCircle
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -340,7 +340,7 @@ const LandingPage = () => {
           <Link to="/" className="flex items-center">
             <img
               src="/logo.png"
-              alt="DevTinder"
+              alt="DevCircle"
               className="h-10 w-auto object-contain"
             />
           </Link>
@@ -350,7 +350,7 @@ const LandingPage = () => {
           </p>
 
           <p className="text-xs text-[#737D8A]">
-            © {new Date().getFullYear()} DevTinder
+            © {new Date().getFullYear()} DevCircle
           </p>
         </div>
       </footer>

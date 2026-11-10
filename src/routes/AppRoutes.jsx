@@ -13,6 +13,8 @@ import AuthenticatedLayout from "../components/layout/AuthenticatedLayout";
 import RequestsPage from "../pages/RequestsPage";
 import ConnectionsPage from "../pages/ConnectionsPage";
 import FeedPage from "../pages/FeedPage";
+import VerifyEmail from "../pages/VerifyEmail";
+import ForgotPasswordPage from "../pages/auth/ForgotPasswordPage";
 
 
 const AppRoutes = () => {
@@ -22,6 +24,8 @@ const AppRoutes = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Route>
 
       <Route element={<PrivateRoute />}>
